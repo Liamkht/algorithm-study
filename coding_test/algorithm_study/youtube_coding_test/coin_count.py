@@ -8,6 +8,7 @@ def solution(N):
     # 5100 /500 몫 10 나머지 100  
     # 100 / 100 몫 1 나머지 0
     count = 0
+    """
     while (N > 0):
         if (N >= 500):
             count += N // 500
@@ -21,6 +22,11 @@ def solution(N):
         else:
             count += N // 10
             N = N % 10          
+    """
+    array = [500, 100, 50, 10]
 
+    for coin in array:
+        count += N // coin
+        N %= coin
     return count
-print(solution(5100))
+print(solution(1260))
